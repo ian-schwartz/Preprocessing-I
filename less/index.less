@@ -57,3 +57,159 @@ html, body {
     height: 100%;
 }
 
+/* Variables */
+@font1: 'Roboto Mono', monospace;
+@font2: 'Roboto', sans-serif;
+@color1: color(lightcyan);
+@color2: color(lightcoral);
+
+/* Mix-ins */
+.flexbox() {
+	display: flex;
+}
+.bordered() {
+	border: 2px solid lightcoral;
+}
+
+.nav-bar {
+	.flexbox();
+	justify-content: flex-end;
+
+	a {
+		margin: 3%;
+		font-family: @font1;
+		color: black;
+		text-decoration: none;
+	}//closes .nav-bar a
+
+	@media screen and (max-width: 500px) {
+		justify-content: center;
+	}//closes 500px media query
+}//closes .nav-bar
+
+.top-content {
+	// border: 2px solid black;
+	background-color: @color1;
+	width: 80%;
+	margin-left: 10%;
+	line-height: 2rem;
+	font-family: @font2;
+
+	h1, p {
+		padding-left: 2%;
+	}
+
+	h1 {
+		font-family: @font1;
+		font-size: 1.5rem;
+	}
+
+	button {
+		.bordered();
+		font-family: @font1;
+		font-size: 80%;
+		height: 3rem;
+		width: 8rem;
+		border-radius: 5%;
+		margin: 2% 2%; 
+	}
+
+	.top-content-img {
+		width: 100%;
+	}
+}//close top-content
+
+.middle-content {
+	.flexbox();
+	line-height: 2rem;
+	padding: 5%;
+	li {
+		list-style: square;
+	}
+
+	h2 {
+		font-family: @font1;
+		font-size: 1.5rem;
+		margin-bottom: 4%;
+	}//closes .middle-content h2
+}//close middle-content
+
+.middle-content-left {
+	background-color: @color2;
+	width: 45%;
+	margin: 5%;
+	padding: 4%;
+	font-family: @font2;
+}//closes .middle-content-left
+
+.middle-content-right {
+	background-color: @color2;
+	width: 45%;
+	margin: 5%;
+	padding: 4%;
+	font-family: @font2;
+
+	@media screen and (max-width: 500px) {
+		padding: 10%;
+	}//closes 500px media query
+}//closes .middle-content-right
+
+.bottom-content {
+	.flexbox();
+	line-height: 2rem;
+	padding: 5%;
+	li {
+		list-style-type: disc;
+	}
+
+	h2 {
+		font-family: @font1;
+		font-size: 1.5rem;
+		margin-bottom: 4%;
+	}
+}//close bottom-content
+
+.bottom-content-left {
+	.bordered();
+	background-color: @color1;
+	width: 45%;
+	margin: 5%;
+	padding: 4%;
+	font-family: @font2;
+}//closes .bottom-content-left
+
+.bottom-content-right {
+	.bordered();
+	background-color: @color1;
+	width: 45%;
+	margin: 5%;
+	padding: 4%;
+	font-family: @font2;
+
+	@media screen and (max-width: 500px) {
+		padding: 10%;
+	}//closes 500px media query
+}//closes .bottom-content-right
+
+footer {
+	border-top: 2px solid black;
+	background-color: @color2;
+	width: 100%;
+	height: 10%;
+
+	.nav-bar-footer {
+		.flexbox();
+		justify-content: space-evenly;
+	}//closes .nav-bar-footer
+
+	a {
+		margin-top: 4%;
+		font-family: @font1;
+		color: black;
+		text-decoration: none;
+
+		@media screen and (max-width: 500px) {
+			padding: 5%;
+		}//closes 500px media query
+	}//closes footer a
+}//closes footer
